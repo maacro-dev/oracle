@@ -7,6 +7,8 @@ dotenv_path = root_dir / ".env"
 load_dotenv(dotenv_path=dotenv_path)
 
 class Settings:
+    ALLOWED_ORIGINS_RAW = os.getenv("ALLOWED_ORIGINS", "")
+
     @property
     def ALLOWED_ORIGINS(self):
         if not self.ALLOWED_ORIGINS_RAW:

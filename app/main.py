@@ -8,7 +8,7 @@ app = FastAPI(title="Yield Prediction API", version="1.0.0")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[o.strip() for o in settings.ALLOWED_ORIGINS.split(",") if o],
+    allow_origins=settings.ALLOWED_ORIGINS,
     allow_methods=["*"],
     allow_headers=["*"],
 )
