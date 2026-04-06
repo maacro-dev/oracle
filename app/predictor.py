@@ -40,8 +40,7 @@ def fetch_fields_for_prediction(
     """
     query = supabase.table("flattened_field_data")\
         .select("*")\
-        .eq("season_id", season_id)\
-        .is_("harvest_date", "null")
+        .eq("season_id", season_id)
 
     if mfid_ids:
         query = query.in_("mfid_id", mfid_ids)
